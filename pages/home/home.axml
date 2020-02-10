@@ -1,7 +1,0 @@
-<view>
-  <input onInput="bindKeyInput" onConfirm="bindConfirm" placeholder="输入后按回车" />
-  <button type="primary">主要操作 Normal</button>
-
-  <checkbox value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />
-  <text class="checkbox-text">{{item.value}}</text>
-</view>

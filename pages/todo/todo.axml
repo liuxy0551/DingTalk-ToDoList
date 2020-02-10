@@ -1,6 +1,6 @@
 <view class="to-do">
   <view class="input-box">
-    <input onInput="bindInput" onConfirm="bindConfirm" maxlength="25" placeholder="输入后按回车添加 ToDo" />
+    <input value="{{ inputValue }}" onInput="bindInput" onConfirm="bindConfirm" maxlength="25" placeholder="输入后按回车添加 ToDo" />
   </view>
 
 
