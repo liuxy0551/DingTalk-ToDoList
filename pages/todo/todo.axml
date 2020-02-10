@@ -5,11 +5,24 @@
 
 
   <view class="checkbox-box">
+      <label>正在进行</label>
       <view class="checkbox-item" a:for="{{ toDoList }}">
-        <checkbox value="{{ item.title }}" checked="{{ item.done }}" />
-        <!-- <view>{{ item.title }}</view> -->
-        <text>{{ index }}</text>
-        <view class="btn">删除</button>
+        <view a:if={{ !item.done }}>
+          <checkbox value="{{ item.title }}" checked="{{ item.done }}" onChange="onChange" data-index="{{ index }}" />
+          <text>{{ item.title }}</text>
+          <view class="btn" onTap="delToDo" data-index="{{ index }}">删除</view>
+        </view>
+      </view>
+  </view>
+
+  <view class="checkbox-box">
+      <label>已经完成</label>
+      <view class="checkbox-item" a:for="{{ toDoList }}">
+        <view a:if={{ item.done }}>
+          <checkbox value="{{ item.title }}" checked="{{ item.done }}" onChange="onChange" data-index="{{ index }}" />
+          <text>{{ item.title }}</text>
+          <view class="btn" onTap="delToDo" data-index="{{ index }}">删除</view>
+        </view>
       </view>
   </view>
 </view>
