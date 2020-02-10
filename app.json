@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/todo/todo",
+    "pages/home/home",
+    "pages/http/http"
+  ],
+  "window": {
+    "defaultTitle": "橙就屋"
+  },
+  "tabBar": {
+    "textColor": "#404040",
+    "selectedColor": "#108ee9",
+    "backgroundColor": "#F5F5F9",
+    "items": [
+      {
+        "pagePath": "pages/home/home",
+        "icon": "images/home.png",
+        "activeIcon": "images/home_HL.png",
+        "name": "Home"
+      },
+      {
+        "pagePath": "pages/todo/todo",
+        "icon": "images/todo.png",
+        "activeIcon": "images/todo_HL.png",
+        "name": "ToDoList"
+      }
+    ]
+  }
+}
