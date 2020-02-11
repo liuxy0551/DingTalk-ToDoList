@@ -91,8 +91,8 @@ Page({
     });
   },
 
-  // 页面加载
-  onLoad (query) {
+  // 每次页面显示都会调用一次
+  onShow () {
     this.data.getToDoList(this)
   },
 
