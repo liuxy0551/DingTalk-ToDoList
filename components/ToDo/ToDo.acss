@@ -7,7 +7,7 @@
 }
 
 .checkbox-item {
-    margin-bottom: 10rpx;
+    margin-bottom: 25rpx;
     display: flex;
     align-items: center;
 }

@@ -1,11 +1,11 @@
 <view>
-  <view class="checkbox-box">
+  <!-- <view class="checkbox-box">
       <label>正在进行</label>
       <block a:for="{{ toDoList }}" key="{{ index }}">
         <view class="checkbox-item" a:if={{ !item.done }}>
           <checkbox value="{{ item.title }}" checked="{{ item.done }}" onChange="onChange" data-index="{{ index }}" />
           <text>{{ item.title }}</text>
-          <view class="btn" onTap="delToDo" data-index="{{ index }}">删除</view>
+          <view class="btn" onTap="onDelete" data-index="{{ index }}">删除</view>
         </view>
       </block>
   </view>
@@ -16,7 +16,18 @@
         <view class="checkbox-item" a:if={{ item.done }}>
           <checkbox value="{{ item.title }}" checked="{{ item.done }}" onChange="onChange" data-index="{{ index }}" />
           <text>{{ item.title }}</text>
-          <view class="btn" onTap="delToDo" data-index="{{ index }}">删除</view>
+          <view class="btn" onTap="onDelete" data-index="{{ index }}">删除</view>
+        </view>
+      </block>
+  </view> -->
+
+  <view class="checkbox-box">
+      <label>{{ status === 'processing' ? '正在进行' : '已经完成' }}</label>
+      <block a:for="{{ toDoList }}" key="{{ index }}">
+        <view class="checkbox-item" a:if={{ item.done === !(status === 'processing') }}>
+          <checkbox value="{{ item.title }}" checked="{{ item.done }}" onChange="onChange" data-index="{{ index }}" />
+          <text>{{ item.title }}</text>
+          <view class="btn" onTap="onDelete" data-index="{{ index }}">删除</view>
         </view>
       </block>
   </view>

@@ -84,7 +84,7 @@ Page({
     });
   },
   // 删除 ToDo
-  delToDo (e) {
+  onDelete (e) {
     let index = e.target.dataset.index
     this.$spliceData({
       toDoList: [index, 1]

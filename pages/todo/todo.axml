@@ -1,29 +1,12 @@
 <view class="to-do">
+  <!-- 输入框 -->
   <view class="input-box">
     <input value="{{ inputValue }}" onInput="bindInput" onConfirm="bindConfirm" maxlength="25" placeholder="输入后按回车添加 ToDo" />
   </view>
 
-  <to-do toDoList="{{ toDoList }}"></to-do>
+  <!-- 正在进行 -->
+  <to-do toDoList="{{ toDoList }}" onChange="onChange" onDelete="onDelete"></to-do>
 
-  <!-- <view class="checkbox-box">
-      <label>正在进行</label>
-      <block a:for="{{ toDoList }}" key="{{ index }}">
-        <view class="checkbox-item" a:if={{ !item.done }}>
-          <checkbox value="{{ item.title }}" checked="{{ item.done }}" onChange="onChange" data-index="{{ index }}" />
-          <text>{{ item.title }}</text>
-          <view class="btn" onTap="delToDo" data-index="{{ index }}">删除</view>
-        </view>
-      </block>
-  </view>
-
-  <view class="checkbox-box">
-      <label>已经完成</label>
-      <block a:for="{{ toDoList }}" key="{{ index }}">
-        <view class="checkbox-item" a:if={{ item.done }}>
-          <checkbox value="{{ item.title }}" checked="{{ item.done }}" onChange="onChange" data-index="{{ index }}" />
-          <text>{{ item.title }}</text>
-          <view class="btn" onTap="delToDo" data-index="{{ index }}">删除</view>
-        </view>
-      </block>
-  </view> -->
+  <!-- 已经完成 -->
+  <to-do toDoList="{{ toDoList }}" status="done" onChange="onChange" onDelete="onDelete"></to-do>
 </view>
