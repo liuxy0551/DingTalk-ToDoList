@@ -1,10 +1,4 @@
 <view>
-  this is a blank page
-
-  <input class="input" onInput="bindKeyInput" placeholder="show input content" />
-  <button type="primary">主要操作 Normal</button>
-
-
-            <checkbox value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />
-            <text class="checkbox-text">{{item.value}}</text>
+  <button onTap="getRequest">发起一个 GET 请求</button>
+  <button onTap="postRequest">发起一个 POST 请求</button>
 </view>

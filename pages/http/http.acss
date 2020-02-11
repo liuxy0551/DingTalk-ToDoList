@@ -1,0 +1,6 @@
+button {
+    width: 500rpx;
+    line-height: 100rpx;
+    margin: 50rpx auto;
+    font-size: 30rpx;
+}

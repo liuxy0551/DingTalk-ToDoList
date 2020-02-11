@@ -1,9 +1,17 @@
 Page({
   data: {
-    
+    http: getApp().globalData.http
   },
-  onLoad (query) {
-    // 页面加载
-    // console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
+  getRequest () {
+    this.data.http.get('getCustomer').then(res => {
+      dd.alert({ content: JSON.stringify(res.data) })
+    })
+  },
+  postRequest () {
+    this.data.http.post('getCarouselList').then(res => {
+      dd.alert({ content: JSON.stringify(res.data) })
+    })
+  },
+  onLoad () {
   }
 })
