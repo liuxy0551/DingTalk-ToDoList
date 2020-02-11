@@ -4,6 +4,13 @@ Page({
     toDoList: [],
     // 获取新的 toDoList
     getToDoList (that) {
+      // 使用同步写法可在传递 toDoList 给子组件时，在 didMount 中获取到数据
+      // 获取 toDoList 的同步写法
+      // that.setData({
+      //   toDoList: dd.getStorageSync({ key: 'toDoList' }).data || []
+      // })
+
+      // 获取 toDoList 的异步写法
       dd.getStorage({
         key: 'toDoList',
         success (res) {
@@ -26,17 +33,20 @@ Page({
     if (e.detail.value !== '') {
       // 存入 Storage 中
       let that = this
+      let todo = { done: false, title: e.detail.value }
       dd.setStorage({
         key: 'toDoList',
         data: [
-          ...that.data.toDoList,
-          { title: e.detail.value, done: false }
+          todo,
+          ...that.data.toDoList
         ],
         success () {
           // 存入 Storage 成功后获取新的 toDoList 并清除输入框
-          that.data.getToDoList(that)
+          let list = [...that.data.toDoList]
+          list.unshift(todo)
           that.setData({
-            inputValue: ''
+            inputValue: '',
+            toDoList: list
           })
         }
       });
@@ -86,7 +96,7 @@ Page({
       key: 'toDoList',
       data: that.data.toDoList,
       success () {
-        that.showToast('成功', 1500)
+        // that.showToast('成功', 1500)
       }
     });
   },

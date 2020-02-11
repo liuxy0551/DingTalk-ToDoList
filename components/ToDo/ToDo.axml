@@ -1,11 +1,5 @@
-<view class="to-do">
-  <view class="input-box">
-    <input value="{{ inputValue }}" onInput="bindInput" onConfirm="bindConfirm" maxlength="25" placeholder="输入后按回车添加 ToDo" />
-  </view>
-
-  <to-do toDoList="{{ toDoList }}"></to-do>
-
-  <!-- <view class="checkbox-box">
+<view>
+  <view class="checkbox-box">
       <label>正在进行</label>
       <block a:for="{{ toDoList }}" key="{{ index }}">
         <view class="checkbox-item" a:if={{ !item.done }}>
@@ -25,5 +19,5 @@
           <view class="btn" onTap="delToDo" data-index="{{ index }}">删除</view>
         </view>
       </block>
-  </view> -->
+  </view>
 </view>

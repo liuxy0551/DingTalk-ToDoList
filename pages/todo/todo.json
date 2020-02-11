@@ -1,3 +1,6 @@
 {
-  "defaultTitle": "ToDoList"
+  "defaultTitle": "ToDoList",
+  "usingComponents": {
+    "to-do": "/components/ToDo/ToDo"
+  }
 }

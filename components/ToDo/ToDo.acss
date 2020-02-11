@@ -1,0 +1,27 @@
+.checkbox-box {
+    padding: 20rpx 0;
+}
+.checkbox-box label {
+    font-size: 36rpx;
+    margin-bottom: 10rpx;
+}
+
+.checkbox-item {
+    margin-bottom: 10rpx;
+    display: flex;
+    align-items: center;
+}
+.checkbox-item text {
+    flex: 1;
+    padding: 0 20rpx;
+}
+.checkbox-item .btn {
+    padding: 8rpx 14rpx;
+    font-size: 28rpx;
+    border: 1rpx #ccc solid;
+    border-radius: 5rpx;
+    background: #E3E3E3;
+}
+.checkbox-item .btn:active {
+    background: #F6F6F6;
+}
