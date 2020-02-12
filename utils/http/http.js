@@ -12,28 +12,30 @@ function post (api, data = {}, loading = false) {
 function request (url, method, data, loading) {
     return new Promise((resolve, reject) => {
         loading && dd.showLoading({ content: '加载中...' })
-
-        dd.httpRequest({
-            url,
-            method,
-            data,
-            timeout: 10 * 1000,
-            success: res => {
-                if (res.status !== 200) {
-                    toast('网络错误')
-                    reject(res.data || {})
-                } else {
-                    resolve(res.data || {})
+        
+        setTimeout(() => {
+            dd.httpRequest({
+                url,
+                method,
+                data,
+                timeout: 10 * 1000,
+                success: res => {
+                    if (res.status !== 200) {
+                        toast('网络错误')
+                        reject(res.data || {})
+                    } else {
+                        resolve(res.data || {})
+                    }
+                    dd.hideLoading()
+                },
+                fail: err => {
+                    toast('请求失败')
+                    reject(err)
+                    dd.hideLoading()
+                    // dd.alert({ content: JSON.stringify(err) })
                 }
-                dd.hideLoading()
-            },
-            fail: err => {
-                toast('请求失败')
-                reject(err)
-                dd.hideLoading()
-                // dd.alert({ content: JSON.stringify(err) })
-            }
-        })
+            })
+        }, loading ? 1000 : 1)
     })
 }
 

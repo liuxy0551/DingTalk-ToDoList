@@ -3,7 +3,7 @@ Page({
     http: getApp().globalData.http
   },
   getRequest () {
-    this.data.http.get('getCustomer').then(res => {
+    this.data.http.get('getCustomer', {}, true).then(res => {
       dd.alert({ content: JSON.stringify(res.data) })
     })
   },

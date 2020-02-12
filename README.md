@@ -1,10 +1,15 @@
 ## 钉钉小程序
 
 
+<div>
+  <img src="images/1.png" width="600">
+</div>
+
+
 ### 一、ToDoList 待解答的问题
 
 - 1、axml 文件标签上如何使用 filter、map
-- 2、onChange 方法中 setData 写法的优化
+- 2、[onChange](https://github.com/liuxy0551/DingTalk-ToDoList/blob/master/pages/todo/todo.js#L56) 方法中 setData 写法如何优化
 - 3、onShow 如何调用自定义方法，目前是将自定义方法写在 Page.data 中
 
 
@@ -20,8 +25,3 @@
 
 - [x] 1、get  
 - [x] 2、post  
-
-
-### 四、扫码
-
-- [ ] 1、打开摄像头

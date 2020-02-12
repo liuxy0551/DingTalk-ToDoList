@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/http/http",
-    "pages/todo/todo"
+    "pages/todo/todo",
+    "pages/http/http"
   ],
   "window": {
     "defaultTitle": "橙就屋"
